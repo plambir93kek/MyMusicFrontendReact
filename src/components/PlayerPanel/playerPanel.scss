@@ -1,0 +1,125 @@
+
+
+@import '../../scss/breakpoints.scss';
+@import '../../scss/colors.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+
+.player {
+
+    position: fixed;
+    width: 100%;
+    margin-bottom: 0px;
+    bottom: 0;
+    background-color: white;
+    z-index: 5;
+    animation: show-up 1s forwards;
+    padding-bottom: 20px;
+    
+    .timePanel {
+        display: flex;
+        justify-content: space-between;
+
+        .currentTime, .duration {
+            margin: 0 10px;
+    }
+
+    .trackMini {
+        margin: 3px auto;
+        display: none;
+        @include xs-bp{
+            display: block;
+        }
+    }
+
+    }
+    .playerPanel {
+        display: grid;
+        position: relative;
+        grid-template-columns: 2fr 8fr 0.5fr 0.5fr;
+        justify-items: center;
+        align-items: center;
+        width: 85%;
+        margin: auto;
+        @include mid-bp{
+            grid-template-columns: 2fr 6fr 0.5fr 0.5fr;
+        }
+        @include mini-bp {
+            grid-template-columns: 2fr 6fr 1fr 1fr;
+        }
+
+        @include xs-bp {
+            grid-template-columns: 1fr;
+        }
+
+        .keys {
+            display: flex;
+            justify-content: start;
+            width: 100%;
+            @include xs-bp {
+                width: auto;
+            }
+        }
+
+        .track {
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            align-items: center;
+            .trackIcon {
+                width: 70px;
+                height: 70px;
+                object-fit: cover;
+            }
+            .artist {
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                margin: 0;
+                color: $darkcolor;
+                }
+                @include xs-bp {
+                    display: none;
+            }
+    
+            .name {
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                margin: 0;
+                color: rgb(128, 128, 128);
+            }
+        }
+
+        .volume {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 24px;
+                position: absolute;
+                bottom: 23px;
+                right: 0;
+                @include xs-bp{
+                    display: none;
+                }
+            }
+
+        .likeIcon {
+            display: flex;
+            width: 100%;
+            justify-content: end;
+            @include xs-bp{
+                display: none;
+            }
+        }
+        
+    }
+}
+
+@keyframes show-up {
+    0% {
+        transform: translateY(300px);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}

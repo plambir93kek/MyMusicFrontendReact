@@ -1,0 +1,69 @@
+@import '../../scss/breakpoints.scss';
+@import '../../scss/colors.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.header {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgb(219, 219, 219);
+    padding-bottom: 0.5rem;
+    flex-wrap: wrap;
+    height: 5rem;
+    @include mini-bp {
+        height: max-content;
+    }
+
+    h1 {
+        color: #10162F;
+        margin-left: 2rem;
+        
+        .span{
+            color: $maincolor;
+        }
+
+        @include mini-bp {
+            padding-bottom: 1rem;
+            text-align: center;
+            margin: auto;
+        }
+    }
+    .links {
+           display: flex;
+           gap: 3rem;
+           flex-wrap: wrap;
+           flex-grow: 1;
+           align-items: center;
+           margin-left: 5rem;
+
+           @include mini-bp {
+               flex-basis: 100%;
+               order: 2;
+               justify-content: center;
+               align-items: center;
+               margin-left: 0;
+               gap: 0;
+           }
+
+        .nav {
+            color: $maincolor;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+            text-align: center;
+            @include mini-bp {
+                flex-basis: 50%;
+            }
+        }
+        .search {
+            @include mini-bp {
+                width: 15rem;
+            }
+        }
+    }
+    .icon {
+        @media(max-width: 725px){
+            display: none;
+        }
+    }
+}

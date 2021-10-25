@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+.player {
+  position: fixed;
+  width: 100%;
+  margin-bottom: 0px;
+  bottom: 0;
+  background-color: white;
+  z-index: 5;
+  -webkit-animation: show-up 1s forwards;
+          animation: show-up 1s forwards;
+  padding-bottom: 20px;
+}
+.player .timePanel {
+  display: flex;
+  justify-content: space-between;
+}
+.player .timePanel .currentTime, .player .timePanel .duration {
+  margin: 0 10px;
+}
+.player .timePanel .trackMini {
+  margin: 3px auto;
+  display: none;
+}
+@media (max-width: 500px) {
+  .player .timePanel .trackMini {
+    display: block;
+  }
+}
+.player .playerPanel {
+  display: grid;
+  position: relative;
+  grid-template-columns: 2fr 8fr 0.5fr 0.5fr;
+  justify-items: center;
+  align-items: center;
+  width: 85%;
+  margin: auto;
+}
+@media (max-width: 1080px) {
+  .player .playerPanel {
+    grid-template-columns: 2fr 6fr 0.5fr 0.5fr;
+  }
+}
+@media (max-width: 650px) {
+  .player .playerPanel {
+    grid-template-columns: 2fr 6fr 1fr 1fr;
+  }
+}
+@media (max-width: 500px) {
+  .player .playerPanel {
+    grid-template-columns: 1fr;
+  }
+}
+.player .playerPanel .keys {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+}
+@media (max-width: 500px) {
+  .player .playerPanel .keys {
+    width: auto;
+  }
+}
+.player .playerPanel .track {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+}
+.player .playerPanel .track .trackIcon {
+  width: 70px;
+  height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.player .playerPanel .track .artist {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  color: #10162F;
+}
+@media (max-width: 500px) {
+  .player .playerPanel .track {
+    display: none;
+  }
+}
+.player .playerPanel .track .name {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  color: gray;
+}
+.player .playerPanel .volume {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 24px;
+  position: absolute;
+  bottom: 23px;
+  right: 0;
+}
+@media (max-width: 500px) {
+  .player .playerPanel .volume {
+    display: none;
+  }
+}
+.player .playerPanel .likeIcon {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+@media (max-width: 500px) {
+  .player .playerPanel .likeIcon {
+    display: none;
+  }
+}
+
+@-webkit-keyframes show-up {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes show-up {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=playerPanel.css.map */

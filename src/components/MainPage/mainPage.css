@@ -1,0 +1,8 @@
+.mainPage {
+  display: flex;
+}
+
+.scrollPage {
+  height: 680px;
+  overflow: scroll;
+}/*# sourceMappingURL=mainPage.css.map */

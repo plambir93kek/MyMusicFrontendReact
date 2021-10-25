@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import '../../scss/breakpoints.scss';
+@import '../../scss/colors.scss';
+
+.articleBox {
+    margin: 30px auto;
+    @include mini-bp {
+        display: none;
+    }
+
+    .article {
+        display: flex;
+        position: relative;
+        margin: 20px;
+        grid-area: 1/-1;
+        transition: 0.5s;
+    
+        .imgSlider {
+           width: 400px;
+           height: 400px;
+           object-fit: cover;
+
+           @include mid-bp {
+               width: 250px;
+               height: 400px;
+               object-fit: cover;
+           }
+        }
+    
+        .articleAbout {
+            position: absolute;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            font-size: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;   
+        }
+    }
+
+    .link {
+        display: flex;
+        justify-content: center;
+        
+        .more {
+            font-family: 'Roboto', sans-serif;
+             font-weight: bold;
+             font-size: 20px;
+             border: 2px solid $maincolor;
+             padding: 10px;
+             transition: 0.5s;
+             cursor: pointer;
+             margin: 0;
+
+             &:hover {
+               transform: scale(1.1);
+             }
+        }
+    };
+
+    .fullArticle {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: 11%;
+        width: 700px;
+        overflow: auto;
+        background-color: white;
+        padding: 20px 20px 41px 20px;
+        border: 2px solid $maincolor;
+        border-radius: 15px;
+        @include mid-bp {
+            width: 500px;
+        }
+        @include mini-bp {
+            display: none;
+        }
+    }
+
+    .imgFull {
+        width: 400px;
+        height: 400px;
+        margin: 0 10px 0 10px;
+        object-fit: cover;
+        float: left;
+        @include mid-bp {
+          width: 250px;
+          height: 250px;
+        }
+    }
+
+    .textArticle{
+        font-size: 15px;
+        margin: 0;
+    }
+};
+
+
+.articleSlide {
+    display: grid;
+    height: 440px;
+    @include mid-bp {
+        width: 290px;
+    }
+};
+
+.slide-enter-active {
+   animation: show 0.5s forwards;
+}
+
+.slide-exit-active{
+    opacity: 0;
+}
+
+@keyframes show {
+    0%{
+        transform: translateX(-80px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+.fullArt-enter-active {
+  animation: showArt 0.5s;
+};
+
+.fullArt-exit-active {
+    animation: hideArt 0.5s forwards;
+};
+
+@keyframes showArt {
+    0% {
+     transform: scale(0);
+     opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+       }
+};
+
+@keyframes hideArt {
+    0%{
+        opacity: 1; 
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
