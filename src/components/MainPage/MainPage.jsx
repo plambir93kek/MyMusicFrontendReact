@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Articles from '../Articles/Articles';
 import Player from '../Player/Player';
@@ -6,26 +6,30 @@ import './mainPage.css'
 
 //render tracks, player panel and articles
 const MainPage = () => {
-
+    const [scroll, setScroll] = useState('')
+    const [fired, setFired] = useState(false)
     const playerTrack = useSelector(state => state.player);
-    
+
     //add scroll on track list, when player panel is visible
-    const addScroll = ()=>{
-        const main = document.getElementsByClassName('mainPage')[0];
-        setTimeout(()=> {
-            if(main){
-            main.classList.add("scrollPage")
-            }
-        }, 1000)
-    }
+   
+    useEffect(() => {
+        if (playerTrack._id !== '0' && !fired) {
+            
+            const timeoutId = setTimeout(() => {
+                setScroll("scrollPage")
+                    setFired(true)
+            }, 1000);
+
+            return () => clearTimeout(timeoutId);
+        }
+    }, [fired,playerTrack._id])
 
     return (
-        
-        <div className={`mainPage ${playerTrack._id !== '0'? addScroll() : ''}`}>
-            <Player/>
+        <div className={`mainPage ${scroll}`}>
+            <Player />
             <Articles />
         </div>
-        
+
     )
 };
 

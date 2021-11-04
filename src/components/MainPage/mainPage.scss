@@ -6,9 +6,9 @@
   
   .scrollPage {
     overflow-y: scroll;
-    height: 72vh;
+    height: 71vh;
 
     @include mini-bp{
-        height: calc(100vh - 250px)
+        height: calc(100vh - 252px)
     }
   }

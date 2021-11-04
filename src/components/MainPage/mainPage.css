@@ -4,10 +4,10 @@
 
 .scrollPage {
   overflow-y: scroll;
-  height: 72vh;
+  height: 71vh;
 }
 @media (max-width: 650px) {
   .scrollPage {
-    height: calc(100vh - 250px);
+    height: calc(100vh - 252px);
   }
 }/*# sourceMappingURL=mainPage.css.map */
