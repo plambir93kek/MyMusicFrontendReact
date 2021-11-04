@@ -1,5 +1,6 @@
 ## Пэт-проект My Music.
 ### Backend - https://github.com/plambir93kek/NestBackendMyMusic
+### Deployed - https://mymusicreact.herokuapp.com/
 
 ### Стек :
 * React
