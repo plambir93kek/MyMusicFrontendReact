@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from '@mui/material/Slider';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -48,7 +48,7 @@ const PlayerPanel = ({ duration, changeCurretTime, pauseTrack, playTrack, change
                 volume: 1,
                 currentTime: 0
             }));
-            playTrack()
+            
         }
     }
 
@@ -65,7 +65,6 @@ const PlayerPanel = ({ duration, changeCurretTime, pauseTrack, playTrack, change
                 volume: 1,
                 currentTime: 0
             }));
-            playTrack()
         }
     }
 
@@ -102,7 +101,11 @@ const PlayerPanel = ({ duration, changeCurretTime, pauseTrack, playTrack, change
     
     //chang current time of audio
     const changeCT = (e) => {
-        changeCurretTime(Number(e.target.value))
+        if(currentTime===duration){
+            setNextTrack()
+        }else{
+          changeCurretTime(Number(e.target.value))
+        }
     }
 
     const changeVol = (e) => {
@@ -110,12 +113,14 @@ const PlayerPanel = ({ duration, changeCurretTime, pauseTrack, playTrack, change
         setVolume(Number(e.target.value))
     }
 
-    if (currentTime === duration) {
-        setNextTrack()
-    };
+    useEffect(() =>{
+        if (currentTime === duration) {
+            setNextTrack()
+        };
+    })
+
 
     return (
-
         <div> {playerTrack._id !== '0' &&
             <div className='player'>
                 <Slider

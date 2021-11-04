@@ -2,32 +2,13 @@
 
 .mainPage {
     display: flex;
-}
-
-.scrollPage {
+  }
+  
+  .scrollPage {
     overflow-y: scroll;
-    height: 700px;
-
-    
-    @include height-l{
-        height: 565px;
-    }
+    height: 72vh;
 
     @include mini-bp{
-        height: 550px;
-     }
-
-    @include height-m {
-        height: 469px;
-    };
-
-    @include height-s {
-        height: 387px;
-    };
- 
-    @include height-xs {
-        height: 310px;
-    };
-
-}
-
+        height: calc(100vh - 250px)
+    }
+  }

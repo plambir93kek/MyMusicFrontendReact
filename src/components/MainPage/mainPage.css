@@ -4,30 +4,10 @@
 
 .scrollPage {
   overflow-y: scroll;
-  height: 700px;
-}
-@media (max-height: 850px) {
-  .scrollPage {
-    height: 565px;
-  }
+  height: 72vh;
 }
 @media (max-width: 650px) {
   .scrollPage {
-    height: 550px;
-  }
-}
-@media (max-height: 750px) {
-  .scrollPage {
-    height: 469px;
-  }
-}
-@media (max-height: 680px) {
-  .scrollPage {
-    height: 387px;
-  }
-}
-@media (max-height: 570px) {
-  .scrollPage {
-    height: 310px;
+    height: calc(100vh - 250px);
   }
 }/*# sourceMappingURL=mainPage.css.map */

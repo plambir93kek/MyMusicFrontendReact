@@ -20,10 +20,12 @@ const MainPage = () => {
     }
 
     return (
+        
         <div className={`mainPage ${playerTrack._id !== '0'? addScroll() : ''}`}>
             <Player/>
             <Articles />
         </div>
+        
     )
 };
 

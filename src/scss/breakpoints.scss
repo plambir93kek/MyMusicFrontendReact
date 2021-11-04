@@ -19,32 +19,3 @@
     }
 };
 
-@mixin height-xs {
-    @media(max-height: 570px){
-        @content;
-    }
-};
-
-@mixin height-s {
-    @media(max-height: 680px){
-        @content;
-    }
-};
-
-@mixin height-m {
-    @media(max-height: 750px){
-        @content;
-    }
-};
-
-@mixin height-l {
-    @media(max-height: 850px){
-        @content
-    }
-};
-
-@mixin height-x{
-    @media(max-height: 900px){
-        @content
-    }
-}

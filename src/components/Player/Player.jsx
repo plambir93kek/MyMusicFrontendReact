@@ -63,6 +63,7 @@ const Player = () => {
 
                 }
             </div>
+            <div style={{position:'relative'}}>
             <PlayerPanel
                 duration={duration}
                 changeCurretTime={changeCurretTime}
@@ -70,6 +71,7 @@ const Player = () => {
                 playTrack={playTrack}
                 changeVolume={changeVolume}
             />
+            </div>
         </div>
     )
 };

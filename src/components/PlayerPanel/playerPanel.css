@@ -2,13 +2,12 @@
 .player {
   position: fixed;
   width: 100%;
-  margin-bottom: 0px;
+  padding-bottom: 20px;
   bottom: 0;
-  background-color: white;
-  z-index: 5;
   -webkit-animation: show-up 1s forwards;
           animation: show-up 1s forwards;
-  padding-bottom: 20px;
+  background: white;
+  z-index: 5;
 }
 @media (max-width: 550px) {
   .player {
