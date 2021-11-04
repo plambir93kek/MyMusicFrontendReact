@@ -15,6 +15,9 @@
     z-index: 5;
     animation: show-up 1s forwards;
     padding-bottom: 20px;
+    @include xs-bp{
+        padding-bottom: 10px;
+    }
     
     .timePanel {
         display: flex;

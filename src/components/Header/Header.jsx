@@ -32,8 +32,8 @@ const Header = () => {
         <div className='header'>
             <h1><span className='span'>My</span> Music</h1>
             <div className='links'>
-                <NavLink className='nav' to='#'>Tracks</NavLink>
-                <NavLink className='nav' to='#'>Articles</NavLink>
+                <NavLink className='nav' to='/'>Tracks</NavLink>
+                <NavLink className='nav' to='/about'>About</NavLink>
                 <TextField value={serarchTerm} onChange={search}  className='search' id="standard-basic" label="Search tracks" variant="standard" />
             </div>
             <MusicNoteIcon className='icon' sx={{ color: 'rgb(80, 1, 155)', width: '80px', height: '45px' }} />

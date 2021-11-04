@@ -1,10 +1,33 @@
+@import '../../scss/breakpoints.scss';
+
 .mainPage {
     display: flex;
-    
 }
 
 .scrollPage {
-    height: 680px;
-    overflow: scroll;
+    overflow-y: scroll;
+    height: 700px;
+
+    
+    @include height-l{
+        height: 565px;
+    }
+
+    @include mini-bp{
+        height: 550px;
+     }
+
+    @include height-m {
+        height: 469px;
+    };
+
+    @include height-s {
+        height: 387px;
+    };
+ 
+    @include height-xs {
+        height: 310px;
+    };
+
 }
 

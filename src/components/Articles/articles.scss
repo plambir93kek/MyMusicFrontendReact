@@ -4,6 +4,7 @@
 
 .articleBox {
     margin: 30px auto;
+    display: grid;
     @include mini-bp {
         display: none;
     }
@@ -14,6 +15,7 @@
         margin: 20px;
         grid-area: 1/-1;
         transition: 0.5s;
+        opacity: 0;
     
         .imgSlider {
            width: 400px;
@@ -111,10 +113,34 @@
 
 .slide-enter-active {
    animation: show 0.5s forwards;
+   display: flex;
+        position: relative;
+        margin: 20px;
+        grid-area: 1/-1;
+}
+
+.slide-enter-done{
+    opacity: 1;
+    display: flex;
+        position: relative;
+        margin: 20px;
+        grid-area: 1/-1;
 }
 
 .slide-exit-active{
     opacity: 0;
+    display: flex;
+        position: relative;
+        margin: 20px;
+        grid-area: 1/-1;
+}
+
+.slide-exit-done{
+    opacity: 0;
+    display: flex;
+        position: relative;
+        margin: 20px;
+        grid-area: 1/-1;
 }
 
 @keyframes show {

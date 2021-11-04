@@ -14,17 +14,18 @@ const TrackItem = ({ track, playTrack, pauseTrack }) => {
     const [like, setLike] = useState(false);
 
     const thisTrack = {
-        artist: track.artist,
-        name: track.name,
-        _id: track._id,
+        artist: track?.artist,
+        name: track?.name,
+        _id: track?._id,
         pause: false,
-        order: track.order,
-        audio: `http://localhost:5000/audio/${track.audio}`,
-        picture: `http://localhost:5000/image/${track.picture}`,
+        order: track?.order,
+        audio: `https://mymusicbackendnest.herokuapp.com/audio/${track?.audio}`,
+        picture: `https://mymusicbackendnest.herokuapp.com/image/${track?.picture}`,
         volume: 1,
         currentTime: 0
     }
-
+    
+    //start play track and dispatch this track to active-track state
     const setPlayTrack = () => {
         if(track._id!==playerTrack._id){
             dispatch(setPlayerTrack(thisTrack))
@@ -40,11 +41,11 @@ const TrackItem = ({ track, playTrack, pauseTrack }) => {
             <div className='trackItem'>
                 {!(track._id === playerTrack._id && !playerTrack.pause)
                     ?
-                    <PlayCircleOutlineIcon sx={{ width: '70px', height: '70px', color: '#10162F' }} onClick={setPlayTrack} />
+                    <PlayCircleOutlineIcon aria-label='play' sx={{ width: '70px', height: '70px', color: '#10162F' }} onClick={setPlayTrack} />
                     :
-                    <PauseCircleOutlineIcon sx={{ width: '70px', height: '70px', color: '#10162F' }} onClick={setPauseTrack} />
+                    <PauseCircleOutlineIcon aria-label='pause' sx={{ width: '70px', height: '70px', color: '#10162F' }} onClick={setPauseTrack} />
                 }
-                <img className='trackIcon' src={`http://localhost:5000/image/${track.picture}`} />
+                <img className='trackIcon' src={`https://mymusicbackendnest.herokuapp.com/image/${track.picture}`} />
                 <div className='trackInf'>
                     <p className='artist'>{track.artist}</p>
                     <p className='name'>{track.name}</p>

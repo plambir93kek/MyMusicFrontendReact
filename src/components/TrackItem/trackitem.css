@@ -17,7 +17,7 @@
     margin: auto;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .trackItem {
     margin: 4px;
     grid-template-columns: 1fr 1fr 2fr;
@@ -38,7 +38,7 @@
   margin: 0;
   color: #10162F;
 }
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .trackItem .trackInf {
     margin: 0;
   }
@@ -49,7 +49,7 @@
   margin: 0;
   color: gray;
 }
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .trackItem .end {
     display: none;
   }

@@ -3,7 +3,7 @@ export const FetchTracks = () => {
     return async (dispatch) => {
         try {
             dispatch({ type: 'SET_LOADING', payload: true });
-            const response = await fetch('http://localhost:5000/tracks');
+            const response = await fetch('https://mymusicbackendnest.herokuapp.com/tracks');
             const payload = await response.json();
             dispatch({ type: 'FETCH_TRACKS', payload })
             dispatch({ type: 'SET_LOADING', payload: false });
@@ -16,7 +16,7 @@ export const FetchTracks = () => {
 export const searchTracks = (query) => {
     return async (dispatch) => {
         try {
-            const response = await fetch(`http://localhost:5000/tracks/search?query=${query}`);
+            const response = await fetch(`https://mymusicbackendnest.herokuapp.com/tracks/search?query=${query}`);
             const payload = await response.json();
             dispatch({ type: 'FETCH_TRACKS', payload });
         } catch (e) {

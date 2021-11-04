@@ -1,0 +1,12 @@
+.about {
+  margin-left: 30px;
+}
+.about h1 {
+  color: #50019b;
+}
+
+@media (max-width: 550px) {
+  .git {
+    display: none;
+  }
+}/*# sourceMappingURL=about.css.map */

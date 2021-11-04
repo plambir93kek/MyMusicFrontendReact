@@ -1,16 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentTime, setPlayerPause } from '../../store/Player/playerActionCreators';
-import { FetchTracks } from "../../store/Tracks/tracksActionCreators";
+import { setCurrentTime, setPlayerPause, setPlayerTrack } from '../../store/Player/playerActionCreators';
 import PlayerPanel from '../PlayerPanel/PlayerPanel';
 import TrackItem from '../TrackItem/TrackItem';
 import './player.css';
 
+//render track list and player panel
 const Player = () => {
 
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(FetchTracks())
+        dispatch(setPlayerTrack({}))
+        dispatch(setPlayerTrack({ _id: '0' }))
     }, [])
 
     const tracks = useSelector(state => state.tracks.tracks);
@@ -20,18 +21,17 @@ const Player = () => {
 
     const [duration, setDuration] = useState(null);
     const audio = useRef();
-    let int;
-
-    const playTrack = async () => {
+    
+    
+    const playTrack = () => {
         dispatch(setPlayerPause(false))
-        if(duration){
+        if (duration) {
             audio.current.play()
         }
     };
 
     const pauseTrack = () => {
         dispatch(setPlayerPause(true));
-        clearInterval(int);
         audio.current.pause()
     }
 
@@ -47,10 +47,10 @@ const Player = () => {
 
     return (
         <div>
-            {error && <h2 style={{margin: '100px 50px', textAlign:'center'}}>Ошибка загрузки данных...</h2>}
+            {error && <h2 style={{ margin: '100px 50px', textAlign: 'center' }}>Ошибка загрузки данных...</h2>}
             <audio src={playerTrack.audio} ref={audio}
                 onLoadedData={(e) => { setDuration(e.currentTarget.duration); audio.current.play() }} onTimeUpdate={(e) => { dispatch(setCurrentTime(e.currentTarget.currentTime)) }}></audio>
-            <div style={{marginTop:'30px'}}>
+            <div style={{ marginTop: '30px' }}>
                 {isLoading ?
                     ''
                     : tracks?.map(track => <TrackItem

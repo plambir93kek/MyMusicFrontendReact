@@ -1,0 +1,14 @@
+@import '../../scss/colors.scss';
+@import '../../scss/breakpoints.scss';
+.about{
+    margin-left: 30px;
+    h1 {
+        color: $maincolor;
+    }
+
+};
+
+.git{
+    @include xs-bp{
+        display: none;
+}}

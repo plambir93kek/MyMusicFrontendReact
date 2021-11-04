@@ -43,8 +43,8 @@ const PlayerPanel = ({ duration, changeCurretTime, pauseTrack, playTrack, change
                 _id: nextTrack._id,
                 pause: false,
                 order: nextTrack.order,
-                audio: `http://localhost:5000/audio/${nextTrack.audio}`,
-                picture: `http://localhost:5000/image/${nextTrack.picture}`,
+                audio: `https://mymusicbackendnest.herokuapp.com/audio/${nextTrack.audio}`,
+                picture: `https://mymusicbackendnest.herokuapp.com/image/${nextTrack.picture}`,
                 volume: 1,
                 currentTime: 0
             }));
@@ -60,8 +60,8 @@ const PlayerPanel = ({ duration, changeCurretTime, pauseTrack, playTrack, change
                 _id: prevTrack._id,
                 pause: false,
                 order: prevTrack.order,
-                audio: `http://localhost:5000/audio/${prevTrack.audio}`,
-                picture: `http://localhost:5000/image/${prevTrack.picture}`,
+                audio: `https://mymusicbackendnest.herokuapp.com/audio/${prevTrack.audio}`,
+                picture: `https://mymusicbackendnest.herokuapp.com/image/${prevTrack.picture}`,
                 volume: 1,
                 currentTime: 0
             }));
@@ -77,11 +77,13 @@ const PlayerPanel = ({ duration, changeCurretTime, pauseTrack, playTrack, change
         seconds = (seconds >= 10) ? seconds : "0" + seconds;
         return `${minutes}:${seconds}`;
     }
-
+    
+    //show volume slider
     const showSlider = () => {
         setShowVol(true)
     };
-
+    
+    //hide volume slider
     const hideSlider = () => {
         setShowVol(false)
     };
@@ -97,7 +99,8 @@ const PlayerPanel = ({ duration, changeCurretTime, pauseTrack, playTrack, change
         changeVolume(1)
         setVolume(100)
     };
-
+    
+    //chang current time of audio
     const changeCT = (e) => {
         changeCurretTime(Number(e.target.value))
     }
@@ -121,8 +124,9 @@ const PlayerPanel = ({ duration, changeCurretTime, pauseTrack, playTrack, change
                     size="small"
                     min={0}
                     step={1}
+                    style={{padding:'0px'}}
                     sx={{
-                        height: 10, padding: 0, opacity: 0.7,
+                        height: 10, padding: '0px', opacity: 0.7,
                         '&:hover': {
                             opacity: 1
                         },
@@ -158,12 +162,12 @@ const PlayerPanel = ({ duration, changeCurretTime, pauseTrack, playTrack, change
                     <div className='keys'>
                         <SkipPreviousIcon onClick={setPrevTrack} fontSize='large' />
                         {playerTrack.pause ?
-                            <PlayArrowIcon fontSize='large' onClick={playTrack} />
+                            <PlayArrowIcon aria-label='play' fontSize='large' onClick={playTrack} />
                             :
-                            <PauseIcon fontSize='large' onClick={pauseTrack} />
+                            <PauseIcon aria-label='pause' fontSize='large' onClick={pauseTrack} />
                         }
 
-                        <SkipNextIcon onClick={setNextTrack} fontSize='large' />
+                        <SkipNextIcon  onClick={setNextTrack} fontSize='large' />
                     </div>
                     <div className='track'>
                         <img className='trackIcon' src={playerTrack.picture} />
