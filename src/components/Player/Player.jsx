@@ -49,7 +49,7 @@ const Player = () => {
         <div>
             {error && <h2 style={{ margin: '100px 50px', textAlign: 'center' }}>Ошибка загрузки данных...</h2>}
             <audio src={playerTrack.audio} ref={audio}
-                onLoadedData={(e) => { setDuration(e.currentTarget.duration); audio.current.play() }} onTimeUpdate={(e) => { dispatch(setCurrentTime(e.currentTarget.currentTime)) }}></audio>
+                onLoadedData={(e) => { setDuration(e.currentTarget.duration); if(playerTrack.audio){audio.current.play()} }} onTimeUpdate={(e) => { dispatch(setCurrentTime(e.currentTarget.currentTime)) }}></audio>
             <div style={{ marginTop: '30px' }}>
                 {isLoading ?
                     ''

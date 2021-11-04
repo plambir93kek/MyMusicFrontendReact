@@ -2,7 +2,7 @@
   "name": "new-player",
   "version": "0.1.0",
   "private": true,
-  "proxe": "https://mymusicbackendnest.herokuapp.com",
+  "proxy": "https://mymusicbackendnest.herokuapp.com",
   "dependencies": {
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
