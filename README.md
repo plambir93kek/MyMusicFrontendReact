@@ -1,5 +1,6 @@
-## Пэт-проекет My Music.
+## Пэт-проект My Music.
 ### Backend - https://github.com/plambir93kek/NestBackendMyMusic
+### Deployed - https://mymusicreact.herokuapp.com/
 
 ### Стек :
 * React
@@ -8,6 +9,6 @@
 * React Testing Library
 
 ### Функционал:
-* Проигрование трэков
+* Проигрывание трэков
 * Регулировка параметров проигрывания
 * Поиск трэков
