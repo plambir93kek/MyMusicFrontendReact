@@ -1,4 +1,4 @@
-## Пэт-проекет My Music.
+## Пэт-проект My Music.
 ### Backend - https://github.com/plambir93kek/NestBackendMyMusic
 
 ### Стек :
