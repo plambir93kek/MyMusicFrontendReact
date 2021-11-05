@@ -31,11 +31,10 @@
 }
 .header .links {
   display: flex;
-  gap: 3rem;
   flex-wrap: wrap;
   flex-grow: 1;
   align-items: center;
-  margin-left: 5rem;
+  margin-left: 4rem;
 }
 @media (max-width: 650px) {
   .header .links {
@@ -44,7 +43,6 @@
     justify-content: center;
     align-items: center;
     margin-left: 0;
-    gap: 0;
   }
 }
 .header .links .nav {
@@ -53,15 +51,20 @@
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   text-align: center;
+  margin: 0 1.5rem;
 }
 @media (max-width: 650px) {
   .header .links .nav {
     flex-basis: 50%;
   }
 }
+.header .links .search {
+  margin-left: 2rem;
+}
 @media (max-width: 650px) {
   .header .links .search {
     width: 15rem;
+    margin-left: 0;
   }
 }
 @media (max-width: 725px) {

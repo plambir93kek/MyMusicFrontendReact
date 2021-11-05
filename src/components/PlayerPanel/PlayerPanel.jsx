@@ -48,7 +48,7 @@ const PlayerPanel = ({ duration, changeCurretTime, pauseTrack, playTrack, change
                 volume: 1,
                 currentTime: 0
             }));
-            
+            playTrack()
         }
     }
 
@@ -65,6 +65,7 @@ const PlayerPanel = ({ duration, changeCurretTime, pauseTrack, playTrack, change
                 volume: 1,
                 currentTime: 0
             }));
+            playTrack()
         }
     }
 
