@@ -9,6 +9,7 @@ const MainPage = () => {
     const [scroll, setScroll] = useState('')
     const [fired, setFired] = useState(false)
     const playerTrack = useSelector(state => state.player);
+    const isLoading = useSelector(state => state.tracks.isLoading);
 
     //add scroll on track list, when player panel is visible
    
@@ -25,10 +26,16 @@ const MainPage = () => {
     }, [fired,playerTrack._id])
 
     return (
+        <>
+        {isLoading? 
+        <h1 style={{textAlign:'center'}}>...Loading data, please wait</h1>
+        :
         <div className={`mainPage ${scroll}`}>
             <Player />
             <Articles />
         </div>
+        }
+        </>
 
     )
 };
