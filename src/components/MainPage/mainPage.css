@@ -4,7 +4,7 @@
 
 .scrollPage {
   overflow-y: scroll;
-  height: 71vh;
+  height: calc(100vh - 225px);
 }
 @media (max-width: 650px) {
   .scrollPage {
