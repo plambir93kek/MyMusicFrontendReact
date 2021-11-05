@@ -14,8 +14,10 @@
 
 @media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {
-    .scrollPage {
-      height: calc(100vh - 370px);
+    @media (max-width: 650px) {
+      .scrollPage {
+        height: calc(100vh - 360px);
+      }
     }
   }
 }/*# sourceMappingURL=mainPage.css.map */
