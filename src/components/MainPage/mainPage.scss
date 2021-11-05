@@ -5,11 +5,21 @@
   }
   
   .scrollPage {
-    -webkit-overflow-scrolling:touch;
     overflow-y: scroll;
     height: 71vh;
 
     @include mini-bp{
-        height: calc(100vh - 252px)
+        height: calc(100vh - 252px);
+        
     }
   }
+
+  @media not all and (min-resolution:.001dpcm)
+  { @supports (-webkit-appearance:none) {
+  
+      .scrollPage { 
+  
+        height: calc(100vh - 370px);
+  
+      }
+  }}
