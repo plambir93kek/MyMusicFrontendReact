@@ -8,6 +8,7 @@ export const fetchArticles = () => {
             const articles = await response.json();
             dispatch({type: 'FETCH_ARTICLES', payload: articles});
             dispatch({ type: 'SET_LOADING,', payload: false });
+            
         } catch (e) {
            dispatch({type: 'SET_ERROR', payload: true})
         }

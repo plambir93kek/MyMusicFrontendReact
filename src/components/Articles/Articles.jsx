@@ -30,7 +30,6 @@ const Articles = () => {
     //set to show article and stops slider
     const showArticle = () => {
         clearInterval(int)
-        int=0;
         if (!show) {
             setshow(!show)
         } else {
@@ -49,7 +48,7 @@ const Articles = () => {
         return ()=>{
             clearInterval(int)
         }
-    }, [current])
+    }, [current, articles])
 
     return (
         <div className='articleBox'>
