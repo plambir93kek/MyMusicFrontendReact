@@ -16,8 +16,9 @@
   @supports (-webkit-appearance: none) {
     @media (max-width: 650px) {
       .scrollPage {
-        height: calc(100vh - 300px);
+        height: calc(100vh - 325px);
       }
     }
   }
-}/*# sourceMappingURL=mainPage.css.map */
+}
+/*# sourceMappingURL=mainPage.css.map *//*# sourceMappingURL=mainPage.css.map */

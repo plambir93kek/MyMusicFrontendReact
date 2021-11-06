@@ -13,13 +13,12 @@
         
     }
   }
-
-  @media not all and (min-resolution:.001dpcm)
-  { @supports (-webkit-appearance:none) {
-  
-    @media (max-width: 650px) {
-      .scrollPage {
-        height: calc(100vh - 300px);
+  @media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) {
+      @media (max-width: 650px) {
+        .scrollPage {
+          height: calc(100vh - 325px);
+        }
       }
     }
-  }}
+  }/*# sourceMappingURL=mainPage.css.map */
