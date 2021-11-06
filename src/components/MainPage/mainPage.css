@@ -12,13 +12,9 @@
   }
 }
 
-@media not all and (-webkit-min-device-pixel-ratio: 0), not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) {
-    @media (max-width: 650px) {
-      .scrollPage {
-        height: calc(100vh - 320px);
-      }
-    }
-  }
+@media screen and (-webkit-min-device-pixel-ratio:0) 
+{
+::i-block-chrome, .scrollPage{
+  height: calc(100vh - 320px);
 }
-/*# sourceMappingURL=mainPage.css.map *//*# sourceMappingURL=mainPage.css.map */
+}
