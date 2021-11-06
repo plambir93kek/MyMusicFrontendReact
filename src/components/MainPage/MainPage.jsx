@@ -6,6 +6,7 @@ import './mainPage.css';
 import PlayerPanel from '../PlayerPanel/PlayerPanel';
 import { setCurrentTime, setPlayerPause } from '../../store/Player/playerActionCreators';
 
+
 //render tracks, player panel and articles, controls audio
 const MainPage = () => {
     const dispatch = useDispatch();
@@ -37,6 +38,7 @@ const MainPage = () => {
     const changeVolume = (vol) => {
         audio.current.volume = vol;
     }
+ 
 
     //add scroll on track list, when player panel is visible
 
@@ -70,6 +72,7 @@ const MainPage = () => {
                     <Articles />
                 </div>
             }
+            
             <PlayerPanel
                 duration={duration}
                 changeCurretTime={changeCurretTime}
@@ -77,6 +80,7 @@ const MainPage = () => {
                 playTrack={playTrack}
                 changeVolume={changeVolume}
             />
+           
         </>
 
     )
