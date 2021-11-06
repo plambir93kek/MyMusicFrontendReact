@@ -8,13 +8,7 @@
 }
 @media (max-width: 650px) {
   .scrollPage {
-    height: calc(100vh - 252px);
+    height: calc(var(--vh, 1vh) * 100 - 260px);
   }
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) 
-{
-::i-block-chrome, .scrollPage{
-  height: calc(100vh - 320px);
-}
-}
