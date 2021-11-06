@@ -5,13 +5,24 @@ import Player from '../Player/Player';
 import './mainPage.css';
 import PlayerPanel from '../PlayerPanel/PlayerPanel';
 import { setCurrentTime, setPlayerPause } from '../../store/Player/playerActionCreators';
+import styled from 'styled-components';
+
+
+const Wrapper = styled.div`
+  height: ${props => props.height? props.height - props.scroll: 'auto' }px;
+  overflow-y: auto;
+  @media (max-width: 650px) {
+    height: ${props => props.height? props.height - props.scroll - 35: 'auto' }px; 
+  }
+`;
 
 
 //render tracks, player panel and articles, controls audio
 const MainPage = () => {
     const dispatch = useDispatch();
-    const [scroll, setScroll] = useState('')
-    const [fired, setFired] = useState(false)
+    const [scroll, setScroll] = useState(0);
+    const [height, setHeight] = useState(null);
+    const [fired, setFired] = useState(false);
     const playerTrack = useSelector(state => state.player);
     const isLoading = useSelector(state => state.tracks.isLoading);
 
@@ -46,21 +57,29 @@ const MainPage = () => {
         if (playerTrack._id !== '0' && !fired) {
 
             const timeoutId = setTimeout(() => {
-                setScroll("scrollPage")
+                setHeight(window.innerHeight)
+                setScroll(225)
                 setFired(true)
             }, 1000);
 
             return () => clearTimeout(timeoutId);
         }
-    }, [fired, playerTrack._id])
+    }, [ playerTrack._id, fired]);
+
+    useEffect(() =>{
+        if(fired){
+            setHeight(window.innerHeight)
+        }
+    }, [window.innerHeight])
 
     return (
         <>
+        <Wrapper height={height} scroll={scroll}>
             {isLoading ?
                 <h1 style={{ textAlign: 'center' }}>...Loading data, please wait</h1>
                 :
 
-                <div className={`mainPage ${scroll}`}>
+                <div className='mainPage'>
                     <audio
                         src={playerTrack.audio} ref={audio}
                         onLoadedData={(e) => {
@@ -72,7 +91,7 @@ const MainPage = () => {
                     <Articles />
                 </div>
             }
-            
+            </Wrapper>
             <PlayerPanel
                 duration={duration}
                 changeCurretTime={changeCurretTime}
