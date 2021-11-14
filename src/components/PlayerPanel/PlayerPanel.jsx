@@ -162,7 +162,7 @@ const PlayerPanel = ({ duration, changeCurretTime, pauseTrack, playTrack, change
                         <p style={{ margin: '0', textAlign: 'center' }}>{playerTrack.name}</p>
                         <p style={{ margin: '0', textAlign: 'center' }}>{playerTrack.artist}</p>
                     </div>
-                    <p className='duration'>{duration ? formatTime(duration) : ''}</p>
+                    <p className='duration'>{playerTrack.duration}</p>
                 </div>
                 <div className='playerPanel'>
                     <div className='keys'>

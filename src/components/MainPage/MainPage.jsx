@@ -7,7 +7,7 @@ import PlayerPanel from '../PlayerPanel/PlayerPanel';
 import { setCurrentTime, setPlayerPause } from '../../store/Player/playerActionCreators';
 import styled from 'styled-components';
 
-
+//this wrapper fix Safari 100vh bug in mobile version
 const Wrapper = styled.div`
   height: ${props => props.height? props.height - props.scroll: 'auto' }px;
   overflow-y: auto;
@@ -34,11 +34,12 @@ const MainPage = () => {
         dispatch(setPlayerPause(false))
         await audio.current.load()
         audio.current.play() 
+       
     };
 
-    const pauseTrack = () => {
+    const pauseTrack = async () => {
         dispatch(setPlayerPause(true));
-        audio.current.pause()
+        audio.current.pause() 
     }
 
     const changeCurretTime = (time) => {
@@ -51,7 +52,7 @@ const MainPage = () => {
     }
  
 
-    //add scroll on track list, when player panel is visible
+    //add scroll on track list, when player panel is visible, only once after track was setted to player
 
     useEffect(() => {
         if (playerTrack._id !== '0' && !fired) {
@@ -66,6 +67,7 @@ const MainPage = () => {
         }
     }, [ playerTrack._id, fired]);
 
+    // this is fix for Safari 100vh bug
     useEffect(() =>{
         if(fired){
             setHeight(window.innerHeight)

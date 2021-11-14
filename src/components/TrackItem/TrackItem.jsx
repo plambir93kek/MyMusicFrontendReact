@@ -22,7 +22,8 @@ const TrackItem = ({ track, playTrack, pauseTrack }) => {
         audio: `https://mymusicbackendnest.herokuapp.com/audio/${track?.audio}`,
         picture: `https://mymusicbackendnest.herokuapp.com/image/${track?.picture}`,
         volume: 1,
-        currentTime: 0
+        currentTime: 0,
+        duration: track?.duration
     }
     
     //start play track and dispatch this track to active-track state
