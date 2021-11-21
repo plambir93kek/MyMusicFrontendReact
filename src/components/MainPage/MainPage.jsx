@@ -32,9 +32,7 @@ const MainPage = () => {
 
     const playTrack = async () => {
         dispatch(setPlayerPause(false))
-        await audio.current.load()
         audio.current.play() 
-       
     };
 
     const pauseTrack = async () => {
@@ -85,6 +83,7 @@ const MainPage = () => {
                     <audio
                         src={playerTrack.audio} ref={audio}
                         onLoadedData={(e) => {
+                            audio.current.play();
                             setDuration(e.currentTarget.duration);
                         }}
                         onTimeUpdate={(e) => { dispatch(setCurrentTime(e.currentTarget.currentTime)) }}>

@@ -46,7 +46,8 @@ const PlayerPanel = ({ duration, changeCurretTime, pauseTrack, playTrack, change
                 audio: `https://mymusicbackendnest.herokuapp.com/audio/${nextTrack.audio}`,
                 picture: `https://mymusicbackendnest.herokuapp.com/image/${nextTrack.picture}`,
                 volume: 1,
-                currentTime: 0
+                currentTime: 0,
+                duration: nextTrack.duration
             }));
             playTrack()
         }
@@ -63,7 +64,8 @@ const PlayerPanel = ({ duration, changeCurretTime, pauseTrack, playTrack, change
                 audio: `https://mymusicbackendnest.herokuapp.com/audio/${prevTrack.audio}`,
                 picture: `https://mymusicbackendnest.herokuapp.com/image/${prevTrack.picture}`,
                 volume: 1,
-                currentTime: 0
+                currentTime: 0,
+                duration: prevTrack.duration
             }));
             playTrack()
         }
